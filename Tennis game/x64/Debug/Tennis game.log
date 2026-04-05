@@ -1,2 +1,10 @@
-﻿  main.cpp
+﻿  Main.cpp
+C:\Users\inter\Documents\programs\Tennis game\Racket.hpp(1,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
+  (ソース ファイル 'Main.cpp' をコンパイルしています)
+  
+  Racket.cpp
+C:\Users\inter\Documents\programs\Tennis game\Racket.hpp(1,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
+  (ソース ファイル 'Racket.cpp' をコンパイルしています)
+  
+  コードを生成中...
   Tennis game.vcxproj -> C:\Users\inter\Documents\programs\Tennis game\x64\Debug\Tennis game.exe

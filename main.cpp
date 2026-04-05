@@ -1,4 +1,5 @@
-#include "DxLib.h"
+#include "TennisGame.hpp"
+
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow) {
 	
 	SetWindowText("Tennis game");
@@ -6,9 +7,20 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	ChangeWindowMode(TRUE);
 	
 	if (DxLib_Init() == -1) return -1;
+
+	Racket racket;
+	racket.init();
+
 	
 	while (1) {
+		ClearDrawScreen();
+
+		racket.draw();
+		racket.move();
 		if (CheckHitKey(KEY_INPUT_ESCAPE) == 1) break;
+		Sleep(33);
+
+		ScreenFlip();
 	}
 
 
