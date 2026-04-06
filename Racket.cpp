@@ -1,5 +1,20 @@
 #include "TennisGame.hpp"
 
+float Racket::getX() {
+	return x;
+}
+
+void Racket::setX(float x) {
+	this->x = x;
+}
+
+float Racket::getY() {
+	return y;
+}
+
+void Racket::setY(float y) {
+	this->y = y;
+}
 void Racket::init() {
 	x = 960 / 2;
 	y = 540 - 30;
