@@ -15,6 +15,13 @@ public:
 	void setX(float x);
 	float getY();
 	void setY(float y);
+
+	// 追加: 速度のゲッター・セッター
+	float getSx();
+	void setSx(float sx);
+	float getSy();
+	void setSy(float sy);
+
 	void init(Racket racket);
 	void move();
 	void draw();

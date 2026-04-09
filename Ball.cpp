@@ -1,4 +1,11 @@
-#include"TennisGame.hpp"
+#include "TennisGame.hpp"
+#include <random>
+#include <cmath>
+
+static std::mt19937& ball_rng() {
+	static std::mt19937 rng((unsigned)std::random_device{}());
+	return rng;
+}
 
 float Ball::getX() {
 	return x;
@@ -14,6 +21,23 @@ float Ball::getY() {
 
 void Ball::setY(float y) {
 	this->y = y;
+}
+
+// 追加: 速度のゲッター・セッター
+float Ball::getSx() {
+	return sx;
+}
+
+void Ball::setSx(float sx) {
+	this->sx = sx;
+}
+
+float Ball::getSy() {
+	return sy;
+}
+
+void Ball::setSy(float sy) {
+	this->sy = sy;
 }
 
 void Ball::init(Racket racket) {
@@ -66,9 +90,20 @@ void Ball::checkRacket(Racket racket) {
 	if (dx * dx + dy * dy <= (float)(ballR * ballR)) {
 		// ボールがラケットに向かっている場合のみ反転（はさまり防止）
 		if ((sy > 0 && by < top + ballR) || (sy < 0 && by > bottom - ballR)) {
-			sy = -sy;
+			// 乱数係数（0.8〜1.4）を作成してスケールを掛ける
+			std::uniform_real_distribution<float> dist(0.8f, 1.4f);
+			float factor = dist(ball_rng());
+
+			// sy を向きに応じて反転かつスケーリングする
+			if (sy > 0.0f) {
+				// 下向きに進んでいてラケットの上面に当たった → 上向きにする（負）
+				sy = -std::abs(sy) * factor;
+			} else {
+				// 上向きに進んでいてラケットの下面に当たった → 下向きにする（正）
+				sy = std::abs(sy) * factor;
+			}
 		} else {
-			// 場合によっては単純に反転でも良い
+			// 必要ならここで単純反転を行う
 			// sy = -sy;
 		}
 	}
