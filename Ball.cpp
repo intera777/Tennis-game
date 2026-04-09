@@ -37,3 +37,11 @@ void Ball::move() {
 void Ball::draw() {
 	DrawCircle(x, y, ballR, 0xffffff, TRUE);
 }
+
+void Ball::checkRacket(Racket racket) {
+	int rx = racket.getX();
+	int ry = racket.getY();
+	int bx = this->x;
+	int by = this->y;
+	int cx = 0, cy = 0; //円の中心から一番近い矩形上の点の座標
+}

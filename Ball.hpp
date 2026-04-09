@@ -18,5 +18,6 @@ public:
 	void init(Racket racket);
 	void move();
 	void draw();
+	void checkRacket(Racket racket);
 
 };
