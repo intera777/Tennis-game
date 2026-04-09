@@ -25,6 +25,8 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 		ball.move();
 		ball.draw();
 
+		ball.checkRacket(racket);
+
 		if (CheckHitKey(KEY_INPUT_ESCAPE) == 1) break;
 		Sleep(33);
 
