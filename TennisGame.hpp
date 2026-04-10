@@ -1,6 +1,7 @@
 #pragma once
 #include "Racket.hpp"
 #include "Ball.hpp"
+#include "User.hpp"
 
 
 #include "DxLib.h"
