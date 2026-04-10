@@ -3,6 +3,7 @@
 const int ballR = 10; //ボールの半径
 
 class Racket;
+class User;
 
 class Ball {
 private:
@@ -23,7 +24,7 @@ public:
 	void setSy(float sy);
 
 	void init(Racket racket);
-	void move();
+	void move(User& user);
 	void draw();
 	void checkRacket(Racket racket);
 

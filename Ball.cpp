@@ -47,7 +47,7 @@ void Ball::init(Racket racket) {
 	sy = -5.0;
 }
 
-void Ball::move() {
+void Ball::move(User& user) {
 	x += sx;
 	y += sy;
 	if (x <= ballR || WIDTH - ballR <= x) {
@@ -55,6 +55,7 @@ void Ball::move() {
 	}
 	if (y <= ballR || HEIGHT - ballR <= y) {
 		sy *= -1;
+		user.setScore(user.getScore() + 100);
 	}
 }
 

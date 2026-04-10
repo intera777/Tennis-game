@@ -62,3 +62,26 @@ bool User::saveHighScore(const std::string& path) const {
 	return !ofs.fail();
 	//後で確認
 }
+
+void User::drawScore() {
+	int margin = 10;
+	int lineSpacing = 22;
+
+	std::string scoreStr = "Score: " + std::to_string(score);
+	int w = GetDrawStringWidth(scoreStr.c_str(), static_cast<int>(scoreStr.length()));
+	int x = WIDTH - w - margin;
+	int y = margin;
+
+	DrawString(x, y, scoreStr.c_str(), 0xffffff);
+}
+
+void User::drawHighScore() {
+	int margin = 10;
+	int lineSpacing = 22;
+
+	std::string highStr = "HighScore: " + std::to_string(highScore);
+	int w = GetDrawStringWidth(highStr.c_str(), static_cast<int>(highStr.length()));
+	int x = WIDTH - margin - w;
+	int y = margin + lineSpacing;
+	DrawString(x, y, highStr.c_str(), 0xffff00);
+}

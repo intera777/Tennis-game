@@ -26,7 +26,7 @@ void Racket::draw() {
 }
 
 void Racket::move() {
-	if (CheckHitKey(KEY_INPUT_LEFT)) x -= racketSpeed;
-	if (CheckHitKey(KEY_INPUT_RIGHT)) x += racketSpeed;
+	if (CheckHitKey(KEY_INPUT_LEFT) && x > racketW/2-1) x -= racketSpeed;
+	if (CheckHitKey(KEY_INPUT_RIGHT) && x < WIDTH - racketW/2 + 1) x += racketSpeed;
 }
 

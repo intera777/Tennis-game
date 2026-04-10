@@ -28,4 +28,7 @@ public:
 	// ファイル入出力（パスは省略時 "highScore.txt"）
 	bool loadHighScore(const std::string& path = "highScore.txt");
 	bool saveHighScore(const std::string& path = "highScore.txt") const;
+
+	void drawScore();
+	void drawHighScore();
 };
