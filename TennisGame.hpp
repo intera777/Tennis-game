@@ -2,6 +2,7 @@
 #include "Racket.hpp"
 #include "Ball.hpp"
 #include "User.hpp"
+#include "Background.hpp"
 
 
 #include "DxLib.h"

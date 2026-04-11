@@ -27,6 +27,9 @@
     <ClCompile Include="User.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
+    <ClCompile Include="Background.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Racket.hpp">
@@ -41,5 +44,16 @@
     <ClInclude Include="User.hpp">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
+    <ClInclude Include="Background.hpp">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Xsd Include="highScore.xsd">
+      <Filter>ヘッダー ファイル</Filter>
+    </Xsd>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="highScore.txt" />
   </ItemGroup>
 </Project>
