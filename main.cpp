@@ -9,11 +9,12 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	enum class GameState { TITLE, PLAY, OVER };
 
 	if (DxLib_Init() == -1) return -1;
-	SetDrawScreen(DX_SCREEN_BACK); //描画先を売ら画面に設定
+	SetDrawScreen(DX_SCREEN_BACK); //描画先を裏画面に設定
 
 	Racket racket;
 	Ball ball;
 	User user;
+	Background background;
 
 	GameState state = GameState::TITLE;
 
@@ -21,6 +22,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	const std::string instrStr = "Press Enter to Start";
 	const std::string quitStr = "Press Q to quit";
 
+	Sound::init();
 
 	while (1) {
 		ClearDrawScreen();
@@ -49,6 +51,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 				racket.init();
 				ball.init(racket);
 				user.init(0);
+				background.init("image/img9.png");
 				state = GameState::PLAY;
 			}
 			break;
@@ -56,25 +59,51 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
 		case GameState::PLAY: {
 
+			background.draw();
+
 			racket.draw();
 			racket.move();
 
 			ball.move(user);
-			ball.draw();
 
-			ball.checkRacket(racket);
+			ball.draw();
+			ball.checkRacket(racket, user);
 
 			user.drawScore();
 			user.drawHighScore();
+			
+			// ボールが下端到達でゲームオーバーへ遷移
+			if (ball.isOutOfBottom()) {
+				state = GameState::OVER;
+				// 必要ならハイスコア更新をここで確定（User::setScore 等で既に保存されていれば不要）
+				break;
+			}
 			break;
 		}
 
 		case GameState::OVER: {
-			racket.draw();
-			ball.draw();
+			// 背景と最終状態を表示
+			background.draw();
+
+			// スコア表示等
 			user.drawScore();
+			user.drawHighScore();
 
+			// Game Over メッセージ
+			drawGameOverMassages();
 
+			// 再スタート
+			if (CheckHitKey(KEY_INPUT_RETURN) == 1) {
+				racket.init();
+				ball.init(racket);
+				user.init(0);
+				state = GameState::PLAY;
+			}
+			// Q で終了
+			if (CheckHitKey(KEY_INPUT_Q) == 1) {
+				DxLib_End();
+				return 0;
+			}
 
 			break;
 		}
@@ -86,7 +115,16 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 		ScreenFlip();
 	}
 
-
 	DxLib_End();
 	return 0;
+}
+
+void drawGameOverMassages() {
+	std::string overStr = "GAME OVER";
+	int ow = GetDrawStringWidth(overStr.c_str(), static_cast<int>(overStr.length()));
+	DrawString((WIDTH - ow) / 2, HEIGHT / 3, overStr.c_str(), 0xFF0000);
+
+	std::string retryStr = "Press ENTER to Restart or Q to Quit";
+	int rw = GetDrawStringWidth(retryStr.c_str(), static_cast<int>(retryStr.length()));
+	DrawString((WIDTH - rw) / 2, HEIGHT / 2, retryStr.c_str(), 0xFFFF00);
 }

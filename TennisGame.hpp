@@ -3,6 +3,8 @@
 #include "Ball.hpp"
 #include "User.hpp"
 #include "Background.hpp"
+#include "Main.hpp"
+#include "Sound.hpp"
 
 
 #include "DxLib.h"

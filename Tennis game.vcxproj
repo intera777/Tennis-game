@@ -143,12 +143,15 @@
     <ClCompile Include="Ball.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Racket.cpp" />
+    <ClCompile Include="Sound.cpp" />
     <ClCompile Include="User.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Background.hpp" />
     <ClInclude Include="Ball.hpp" />
+    <ClInclude Include="Main.hpp" />
     <ClInclude Include="Racket.hpp" />
+    <ClInclude Include="Sound.hpp" />
     <ClInclude Include="TennisGame.hpp" />
     <ClInclude Include="User.hpp" />
   </ItemGroup>

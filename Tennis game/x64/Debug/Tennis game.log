@@ -1,30 +1,17 @@
-﻿  Background.cpp
-C:\Users\inter\Documents\programs\Tennis game\Background.cpp(1,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
+﻿  Ball.cpp
+C:\Users\inter\Documents\programs\Tennis game\Ball.cpp(1,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
 C:\Users\inter\Documents\programs\Tennis game\Racket.hpp(1,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
-  (ソース ファイル 'Background.cpp' をコンパイルしています)
+  (ソース ファイル 'Ball.cpp' をコンパイルしています)
   
 C:\Users\inter\Documents\programs\Tennis game\Ball.hpp(1,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
-  (ソース ファイル 'Background.cpp' をコンパイルしています)
+  (ソース ファイル 'Ball.cpp' をコンパイルしています)
   
 C:\Users\inter\Documents\programs\Tennis game\User.hpp(1,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
-  (ソース ファイル 'Background.cpp' をコンパイルしています)
+  (ソース ファイル 'Ball.cpp' をコンパイルしています)
   
 C:\Users\inter\Documents\programs\Tennis game\Background.hpp(1,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
-  (ソース ファイル 'Background.cpp' をコンパイルしています)
+  (ソース ファイル 'Ball.cpp' をコンパイルしています)
   
-  User.cpp
-C:\Users\inter\Documents\programs\Tennis game\User.cpp(1,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
-C:\Users\inter\Documents\programs\Tennis game\Racket.hpp(1,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
-  (ソース ファイル 'User.cpp' をコンパイルしています)
-  
-C:\Users\inter\Documents\programs\Tennis game\Ball.hpp(1,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
-  (ソース ファイル 'User.cpp' をコンパイルしています)
-  
-C:\Users\inter\Documents\programs\Tennis game\User.hpp(1,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
-  (ソース ファイル 'User.cpp' をコンパイルしています)
-  
-C:\Users\inter\Documents\programs\Tennis game\Background.hpp(1,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
-  (ソース ファイル 'User.cpp' をコンパイルしています)
-  
-  コードを生成中...
+C:\Users\inter\Documents\programs\Tennis game\Ball.cpp(116,17): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\inter\Documents\programs\Tennis game\Ball.cpp(116,14): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
   Tennis game.vcxproj -> C:\Users\inter\Documents\programs\Tennis game\x64\Debug\Tennis game.exe

@@ -2,6 +2,10 @@
 
 const int ballR = 10; //ボールの半径
 
+const float minRatio = 0.2f;
+const float randRatio = 0.5f;
+const float maxSx = 6.0f;
+
 class Racket;
 class User;
 
@@ -11,7 +15,13 @@ private:
 	float y; //y座標
 	float sx; //x方向の速度
 	float sy; //y方向の速度
+	bool outOfBottom; // 画面下端に到達したか
+	int imgHandle; // ボール画像ハンドル（-1 = 未ロード）
+
 public:
+	Ball();
+	~Ball();
+
 	float getX();
 	void setX(float x);
 	float getY();
@@ -26,6 +36,8 @@ public:
 	void init(Racket racket);
 	void move(User& user);
 	void draw();
-	void checkRacket(Racket racket);
+	void checkRacket(Racket racket, User& user);
 
+	// 追加: 画面下端到達判定
+	bool isOutOfBottom() const;
 };
