@@ -52,6 +52,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 				ball.init(racket);
 				user.init(0);
 				background.init("image/img9.png");
+				Sound::playPlayLoop();
 				state = GameState::PLAY;
 			}
 			break;
@@ -74,6 +75,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 			
 			// ボールが下端到達でゲームオーバーへ遷移
 			if (ball.isOutOfBottom()) {
+				Sound::stopPlay();
 				state = GameState::OVER;
 				// 必要ならハイスコア更新をここで確定（User::setScore 等で既に保存されていれば不要）
 				break;
