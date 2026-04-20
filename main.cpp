@@ -4,6 +4,7 @@
 static int g_titleFont = -1;
 static int g_gameOverFont = -1;
 static int g_smallFont = -1;
+static int g_superSmallFont = -1;
 
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow) {
 
@@ -22,6 +23,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	g_titleFont = CreateFontToHandle("Meiryo", 72, 0, DX_FONTTYPE_ANTIALIASING);
 	g_gameOverFont = CreateFontToHandle("Meiryo", 64, 0, DX_FONTTYPE_ANTIALIASING);
 	g_smallFont = CreateFontToHandle("Meiryo", 28, 0, DX_FONTTYPE_ANTIALIASING);
+	g_superSmallFont = CreateFontToHandle("Meiryo", 22, 0, DX_FONTTYPE_ANTIALIASING);
 
 	Racket racket;
 	Ball ball;
@@ -32,27 +34,27 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
 	const std::string titleStr = "Tennis Game";
 	const std::string instrStr = "Press Enter to Start";
-	const std::string quitStr = "Press Q to quit";
+	const std::string quitStr = "Press Q or ESC to quit";
 
 	Sound::init();
 
-	while (1) {
+	while (ProcessMessage() == 0 && CheckHitKey(KEY_INPUT_ESCAPE) == 0) {
 		ClearDrawScreen();
 
 		switch (state) {
 		case GameState::TITLE: {
 			// タイトル表示（中央上部）
-         int tw = GetDrawStringWidthToHandle(titleStr.c_str(), static_cast<int>(titleStr.length()), g_titleFont);
+			int tw = GetDrawStringWidthToHandle(titleStr.c_str(), static_cast<int>(titleStr.length()), g_titleFont);
 			int ix = (WIDTH - tw) / 2;
 			DrawStringToHandle(ix, HEIGHT / 4, titleStr.c_str(), 0xFFFFFF, g_titleFont);
 
 			// 説明（中央）
-         int iw = GetDrawStringWidthToHandle(instrStr.c_str(), static_cast<int>(instrStr.length()), g_smallFont);
+			int iw = GetDrawStringWidthToHandle(instrStr.c_str(), static_cast<int>(instrStr.length()), g_smallFont);
 			int ix2 = (WIDTH - iw) / 2;
 			DrawStringToHandle(ix2, HEIGHT / 2, instrStr.c_str(), 0xFFFF00, g_smallFont);
 
 			// 終了案内（下部）
-           int qw = GetDrawStringWidthToHandle(quitStr.c_str(), static_cast<int>(quitStr.length()), g_smallFont);
+			int qw = GetDrawStringWidthToHandle(quitStr.c_str(), static_cast<int>(quitStr.length()), g_smallFont);
 			int qx = (WIDTH - qw) / 2;
 			DrawStringToHandle(qx, HEIGHT - 40, quitStr.c_str(), 0xAAAAAA, g_smallFont);
 
@@ -84,7 +86,10 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
 			user.drawScore();
 			user.drawHighScore();
-			
+
+			// 左上に終了案内を表示（半透明の背景と影付きテキスト）
+			drawQuitGuide();
+
 			// ボールが下端到達でゲームオーバーへ遷移
 			if (ball.isOutOfBottom()) {
 				Sound::stopPlay();
@@ -115,7 +120,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 				state = GameState::PLAY;
 			}
 			// Q で終了
-            if (CheckHitKey(KEY_INPUT_Q) == 1) {
+			if (CheckHitKey(KEY_INPUT_Q) == 1) {
 				if (g_titleFont != -1) DeleteFontToHandle(g_titleFont);
 				if (g_gameOverFont != -1) DeleteFontToHandle(g_gameOverFont);
 				if (g_smallFont != -1) DeleteFontToHandle(g_smallFont);
@@ -127,7 +132,6 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 		}
 
 		}
-		if (CheckHitKey(KEY_INPUT_ESCAPE) == 1) break;
 		Sleep(33);
 
 		ScreenFlip();
@@ -139,10 +143,32 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
 void drawGameOverMassages() {
 	std::string overStr = "GAME OVER";
-   int ow = GetDrawStringWidthToHandle(overStr.c_str(), static_cast<int>(overStr.length()), g_gameOverFont);
+	int ow = GetDrawStringWidthToHandle(overStr.c_str(), static_cast<int>(overStr.length()), g_gameOverFont);
 	DrawStringToHandle((WIDTH - ow) / 2, HEIGHT / 3, overStr.c_str(), 0xFF0000, g_gameOverFont);
 
-	std::string retryStr = "Press ENTER to Restart or Q to Quit";
+	std::string retryStr = "Press ENTER to Restart. Q or ESC to Quit";
 	int rw = GetDrawStringWidthToHandle(retryStr.c_str(), static_cast<int>(retryStr.length()), g_smallFont);
 	DrawStringToHandle((WIDTH - rw) / 2, HEIGHT / 2, retryStr.c_str(), 0xFFFF00, g_smallFont);
+}
+
+void drawQuitGuide() {
+	std::string escStr = "Press ESC to quit";
+	int margin = 10;
+	int w, fh, l;
+	GetDrawStringSizeToHandle(&w, &fh, &l, escStr.c_str(), static_cast<int>(escStr.length()), g_superSmallFont);
+	int x = margin;
+	int y = margin;
+	int padX = 8;
+	int padY = 6;
+	int left = x - padX;
+	int top = y - padY;
+	int right = x + w + padX;
+	int bottom = y + fh + padY;
+
+	SetDrawBlendMode(DX_BLENDMODE_ALPHA, 160);
+	DrawBox(left, top, right, bottom, 0x808080, TRUE);
+	SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 0);
+
+	DrawStringToHandle(x + 2, y + 2, escStr.c_str(), 0x333333, g_superSmallFont);
+	DrawStringToHandle(x, y, escStr.c_str(), 0xFFFFFF, g_superSmallFont);
 }
