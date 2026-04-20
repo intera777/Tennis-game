@@ -1,0 +1,94 @@
+﻿  Background.cpp
+C:\Users\inter\source\repos\intera777\Tennis-game\Background.cpp(1,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
+C:\Users\inter\source\repos\intera777\Tennis-game\Racket.hpp(1,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
+  (ソース ファイル 'Background.cpp' をコンパイルしています)
+  
+C:\Users\inter\source\repos\intera777\Tennis-game\Ball.hpp(1,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
+  (ソース ファイル 'Background.cpp' をコンパイルしています)
+  
+C:\Users\inter\source\repos\intera777\Tennis-game\User.hpp(1,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
+  (ソース ファイル 'Background.cpp' をコンパイルしています)
+  
+C:\Users\inter\source\repos\intera777\Tennis-game\Background.hpp(1,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
+  (ソース ファイル 'Background.cpp' をコンパイルしています)
+  
+  Ball.cpp
+C:\Users\inter\source\repos\intera777\Tennis-game\Ball.cpp(1,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
+C:\Users\inter\source\repos\intera777\Tennis-game\Racket.hpp(1,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
+  (ソース ファイル 'Ball.cpp' をコンパイルしています)
+  
+C:\Users\inter\source\repos\intera777\Tennis-game\Ball.hpp(1,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
+  (ソース ファイル 'Ball.cpp' をコンパイルしています)
+  
+C:\Users\inter\source\repos\intera777\Tennis-game\User.hpp(1,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
+  (ソース ファイル 'Ball.cpp' をコンパイルしています)
+  
+C:\Users\inter\source\repos\intera777\Tennis-game\Background.hpp(1,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
+  (ソース ファイル 'Ball.cpp' をコンパイルしています)
+  
+C:\Users\inter\source\repos\intera777\Tennis-game\Ball.cpp(116,17): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\inter\source\repos\intera777\Tennis-game\Ball.cpp(116,14): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+  Main.cpp
+C:\Users\inter\source\repos\intera777\Tennis-game\Main.cpp(1,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
+C:\Users\inter\source\repos\intera777\Tennis-game\Racket.hpp(1,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
+  (ソース ファイル 'Main.cpp' をコンパイルしています)
+  
+C:\Users\inter\source\repos\intera777\Tennis-game\Ball.hpp(1,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
+  (ソース ファイル 'Main.cpp' をコンパイルしています)
+  
+C:\Users\inter\source\repos\intera777\Tennis-game\User.hpp(1,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
+  (ソース ファイル 'Main.cpp' をコンパイルしています)
+  
+C:\Users\inter\source\repos\intera777\Tennis-game\Background.hpp(1,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
+  (ソース ファイル 'Main.cpp' をコンパイルしています)
+  
+  Racket.cpp
+C:\Users\inter\source\repos\intera777\Tennis-game\Racket.hpp(1,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
+  (ソース ファイル 'Racket.cpp' をコンパイルしています)
+  
+C:\Users\inter\source\repos\intera777\Tennis-game\Ball.hpp(1,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
+  (ソース ファイル 'Racket.cpp' をコンパイルしています)
+  
+C:\Users\inter\source\repos\intera777\Tennis-game\User.hpp(1,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
+  (ソース ファイル 'Racket.cpp' をコンパイルしています)
+  
+C:\Users\inter\source\repos\intera777\Tennis-game\Background.hpp(1,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
+  (ソース ファイル 'Racket.cpp' をコンパイルしています)
+  
+C:\Users\inter\source\repos\intera777\Tennis-game\Racket.cpp(25,45): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\inter\source\repos\intera777\Tennis-game\Racket.cpp(25,34): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\inter\source\repos\intera777\Tennis-game\Racket.cpp(25,23): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\inter\source\repos\intera777\Tennis-game\Racket.cpp(25,12): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+  Sound.cpp
+C:\Users\inter\source\repos\intera777\Tennis-game\Sound.cpp(1,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
+C:\Users\inter\source\repos\intera777\Tennis-game\Racket.hpp(1,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
+  (ソース ファイル 'Sound.cpp' をコンパイルしています)
+  
+C:\Users\inter\source\repos\intera777\Tennis-game\Ball.hpp(1,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
+  (ソース ファイル 'Sound.cpp' をコンパイルしています)
+  
+C:\Users\inter\source\repos\intera777\Tennis-game\User.hpp(1,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
+  (ソース ファイル 'Sound.cpp' をコンパイルしています)
+  
+C:\Users\inter\source\repos\intera777\Tennis-game\Background.hpp(1,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
+  (ソース ファイル 'Sound.cpp' をコンパイルしています)
+  
+  User.cpp
+C:\Users\inter\source\repos\intera777\Tennis-game\User.cpp(1,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
+C:\Users\inter\source\repos\intera777\Tennis-game\Racket.hpp(1,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
+  (ソース ファイル 'User.cpp' をコンパイルしています)
+  
+C:\Users\inter\source\repos\intera777\Tennis-game\Ball.hpp(1,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
+  (ソース ファイル 'User.cpp' をコンパイルしています)
+  
+C:\Users\inter\source\repos\intera777\Tennis-game\User.hpp(1,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
+  (ソース ファイル 'User.cpp' をコンパイルしています)
+  
+C:\Users\inter\source\repos\intera777\Tennis-game\Background.hpp(1,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
+  (ソース ファイル 'User.cpp' をコンパイルしています)
+  
+  コード生成しています。
+  Previous IPDB not found, fall back to full compilation.
+  All 625 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  コード生成が終了しました。
+  Tennis game.vcxproj -> C:\Users\inter\source\repos\intera777\Tennis-game\x64\Release\Tennis game.exe

@@ -1,15 +1,15 @@
-﻿  Sound.cpp
-C:\Users\inter\Documents\programs\Tennis game\Sound.cpp(1,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
-C:\Users\inter\Documents\programs\Tennis game\Racket.hpp(1,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
-  (ソース ファイル 'Sound.cpp' をコンパイルしています)
+﻿  Main.cpp
+C:\Users\inter\source\repos\intera777\Tennis-game\Main.cpp(1,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
+C:\Users\inter\source\repos\intera777\Tennis-game\Racket.hpp(1,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
+  (ソース ファイル 'Main.cpp' をコンパイルしています)
   
-C:\Users\inter\Documents\programs\Tennis game\Ball.hpp(1,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
-  (ソース ファイル 'Sound.cpp' をコンパイルしています)
+C:\Users\inter\source\repos\intera777\Tennis-game\Ball.hpp(1,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
+  (ソース ファイル 'Main.cpp' をコンパイルしています)
   
-C:\Users\inter\Documents\programs\Tennis game\User.hpp(1,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
-  (ソース ファイル 'Sound.cpp' をコンパイルしています)
+C:\Users\inter\source\repos\intera777\Tennis-game\User.hpp(1,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
+  (ソース ファイル 'Main.cpp' をコンパイルしています)
   
-C:\Users\inter\Documents\programs\Tennis game\Background.hpp(1,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
-  (ソース ファイル 'Sound.cpp' をコンパイルしています)
+C:\Users\inter\source\repos\intera777\Tennis-game\Background.hpp(1,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
+  (ソース ファイル 'Main.cpp' をコンパイルしています)
   
-  Tennis game.vcxproj -> C:\Users\inter\Documents\programs\Tennis game\x64\Debug\Tennis game.exe
+  Tennis game.vcxproj -> C:\Users\inter\source\repos\intera777\Tennis-game\x64\Debug\Tennis game.exe

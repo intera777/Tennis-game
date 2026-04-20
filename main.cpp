@@ -1,6 +1,13 @@
 #include "TennisGame.hpp"
 
+// Font handles for larger text
+static int g_titleFont = -1;
+static int g_gameOverFont = -1;
+static int g_smallFont = -1;
+
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow) {
+
+	SetOutApplicationLogValidFlag(FALSE);
 
 	SetWindowText("Tennis game");
 	SetGraphMode(WIDTH, HEIGHT, 32);
@@ -10,6 +17,11 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
 	if (DxLib_Init() == -1) return -1;
 	SetDrawScreen(DX_SCREEN_BACK); //描画先を裏画面に設定
+
+	// フォント作成（大きめのタイトル・ゲームオーバー用と小さい説明用）
+	g_titleFont = CreateFontToHandle("Meiryo", 72, 0, DX_FONTTYPE_ANTIALIASING);
+	g_gameOverFont = CreateFontToHandle("Meiryo", 64, 0, DX_FONTTYPE_ANTIALIASING);
+	g_smallFont = CreateFontToHandle("Meiryo", 28, 0, DX_FONTTYPE_ANTIALIASING);
 
 	Racket racket;
 	Ball ball;
@@ -30,19 +42,19 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 		switch (state) {
 		case GameState::TITLE: {
 			// タイトル表示（中央上部）
-			int tw = GetDrawStringWidth(titleStr.c_str(), static_cast<int>(titleStr.length()));
+         int tw = GetDrawStringWidthToHandle(titleStr.c_str(), static_cast<int>(titleStr.length()), g_titleFont);
 			int ix = (WIDTH - tw) / 2;
-			DrawString(ix, HEIGHT / 4, titleStr.c_str(), 0xFFFFFF);
+			DrawStringToHandle(ix, HEIGHT / 4, titleStr.c_str(), 0xFFFFFF, g_titleFont);
 
 			// 説明（中央）
-			int iw = GetDrawStringWidth(instrStr.c_str(), static_cast<int>(instrStr.length()));
+         int iw = GetDrawStringWidthToHandle(instrStr.c_str(), static_cast<int>(instrStr.length()), g_smallFont);
 			int ix2 = (WIDTH - iw) / 2;
-			DrawString(ix2, HEIGHT / 2, instrStr.c_str(), 0xFFFF00);
+			DrawStringToHandle(ix2, HEIGHT / 2, instrStr.c_str(), 0xFFFF00, g_smallFont);
 
 			// 終了案内（下部）
-			int qw = GetDrawStringWidth(quitStr.c_str(), static_cast<int>(quitStr.length()));
+           int qw = GetDrawStringWidthToHandle(quitStr.c_str(), static_cast<int>(quitStr.length()), g_smallFont);
 			int qx = (WIDTH - qw) / 2;
-			DrawString(qx, HEIGHT - 40, quitStr.c_str(), 0xAAAAAA);
+			DrawStringToHandle(qx, HEIGHT - 40, quitStr.c_str(), 0xAAAAAA, g_smallFont);
 
 			// ハイスコアを右上に表示
 			user.drawHighScore();
@@ -93,6 +105,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
 			// Game Over メッセージ
 			drawGameOverMassages();
+			user.drawCredits();
 
 			// 再スタート
 			if (CheckHitKey(KEY_INPUT_RETURN) == 1) {
@@ -102,7 +115,10 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 				state = GameState::PLAY;
 			}
 			// Q で終了
-			if (CheckHitKey(KEY_INPUT_Q) == 1) {
+            if (CheckHitKey(KEY_INPUT_Q) == 1) {
+				if (g_titleFont != -1) DeleteFontToHandle(g_titleFont);
+				if (g_gameOverFont != -1) DeleteFontToHandle(g_gameOverFont);
+				if (g_smallFont != -1) DeleteFontToHandle(g_smallFont);
 				DxLib_End();
 				return 0;
 			}
@@ -123,10 +139,10 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
 void drawGameOverMassages() {
 	std::string overStr = "GAME OVER";
-	int ow = GetDrawStringWidth(overStr.c_str(), static_cast<int>(overStr.length()));
-	DrawString((WIDTH - ow) / 2, HEIGHT / 3, overStr.c_str(), 0xFF0000);
+   int ow = GetDrawStringWidthToHandle(overStr.c_str(), static_cast<int>(overStr.length()), g_gameOverFont);
+	DrawStringToHandle((WIDTH - ow) / 2, HEIGHT / 3, overStr.c_str(), 0xFF0000, g_gameOverFont);
 
 	std::string retryStr = "Press ENTER to Restart or Q to Quit";
-	int rw = GetDrawStringWidth(retryStr.c_str(), static_cast<int>(retryStr.length()));
-	DrawString((WIDTH - rw) / 2, HEIGHT / 2, retryStr.c_str(), 0xFFFF00);
+	int rw = GetDrawStringWidthToHandle(retryStr.c_str(), static_cast<int>(retryStr.length()), g_smallFont);
+	DrawStringToHandle((WIDTH - rw) / 2, HEIGHT / 2, retryStr.c_str(), 0xFFFF00, g_smallFont);
 }

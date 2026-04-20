@@ -31,4 +31,6 @@ public:
 
 	void drawScore();
 	void drawHighScore();
+
+	void drawCredits();
 };
