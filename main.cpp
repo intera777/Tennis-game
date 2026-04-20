@@ -12,7 +12,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
 	SetWindowText("Tennis game");
 	SetGraphMode(WIDTH, HEIGHT, 32);
-	ChangeWindowMode(TRUE);
+	ChangeWindowMode(FALSE);
 
 	enum class GameState { TITLE, PLAY, OVER };
 
@@ -117,6 +117,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 				racket.init();
 				ball.init(racket);
 				user.init(0);
+				Sound::playPlayLoop();
 				state = GameState::PLAY;
 			}
 			// Q で終了
